@@ -1,0 +1,28 @@
+{
+  "name": "goit-node-hw-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValikWasT/goit-node-hw-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValikWasT/goit-node-hw-1/issues"
+  },
+  "homepage": "https://github.com/ValikWasT/goit-node-hw-1#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "nanoid": "^4.0.0"
+  },
+  "keywords": []
+}
