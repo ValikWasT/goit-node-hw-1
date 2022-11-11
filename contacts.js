@@ -24,7 +24,7 @@ function getContactById(contactId) {
     .readFile(`${contactsPath}`, "utf-8")
     .then((data) => {
       const contacts = JSON.parse(data);
-      return contacts[contactId];
+      return contacts.find((contact) => contact.id == contactId);
     })
     .catch((err) => console.log(err.message));
 }
