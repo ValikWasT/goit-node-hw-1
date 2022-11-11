@@ -3,6 +3,12 @@ const path = require("path");
 
 const contactsPath = path.resolve("./db/contacts.json");
 
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 function listContacts() {
   return fs
     .readFile(`${contactsPath}`)
@@ -37,13 +43,16 @@ function removeContact(contactId) {
 
 function addContact(name, email, phone) {
   const newContact = {
-    id: Math.random(1),
+    id: getRandomIntInclusive(1, 100).toString(),
     name,
     email,
     phone,
   };
-  console.log(newContact);
-  // fs.appendFile(`${contactsPath}`, JSON.stringify(newContact));
+  listContacts().then((data) => {
+    data.push(newContact);
+    console.log(data);
+    fs.writeFile(`${contactsPath}`, JSON.stringify(data));
+  });
 }
 
 module.exports = {
